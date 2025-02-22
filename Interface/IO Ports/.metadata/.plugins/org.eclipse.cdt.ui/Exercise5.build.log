@@ -1,0 +1,33 @@
+17:47:59 **** Incremental Build of configuration Debug for project Exercise5 ****
+make all 
+Building target: Exercise5.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,Exercise5.map -mmcu=atmega32 -o "Exercise5.elf"  ./ex5.o   
+Finished building target: Exercise5.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S Exercise5.elf  >"Exercise5.lss"
+Finished building: Exercise5.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -R .fuse -R .lock -R .signature -O ihex Exercise5.elf  "Exercise5.hex"
+Finished building: Exercise5.hex
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 Exercise5.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:     212 bytes (0.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+17:47:59 Build Finished. 0 errors, 0 warnings. (took 566ms)
+

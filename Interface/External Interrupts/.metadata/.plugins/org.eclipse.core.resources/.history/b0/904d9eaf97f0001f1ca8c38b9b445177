@@ -1,0 +1,21 @@
+/*
+ * ex1.c
+ *
+ *  Created on: Feb 21, 2025
+ *      Author: marwan
+ */
+
+
+#include<avr/io.h>
+#include<avr/interrupt.h>
+
+ISR(INTERRUPT_INT0_vect)
+{
+
+}
+
+int main(void)
+{
+	DDRC &= ~(1<<PC0);
+
+}

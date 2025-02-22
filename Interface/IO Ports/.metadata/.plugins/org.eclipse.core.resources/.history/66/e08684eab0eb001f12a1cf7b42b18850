@@ -1,0 +1,30 @@
+/*
+ * challenge1.c
+ *
+ *  Created on: Feb 15, 2025
+ *      Author: marwan
+ */
+
+//Controlling 3 Leds (Roll Action)
+
+#include<avr/io.h>
+#include<util/delay.h>
+
+int main (void)
+{
+	DDRC |= 0x07;  //Configure PIN0,PIN1,PIN2 as output pins.
+	PORTC &= 0xF8; // Set PIN0,PIN1,PIN2 with value 0 at the beginning (3 LEDS are OFF)
+
+	while(1)
+	{
+
+		PORTC = 0x01; //Set PIN0 in PORTC with value 1 (LED ON) while
+		_delay_ms(500);// delay for 0.5 sec
+
+		PORTC = 0x02 ;
+		_delay_ms(500);
+
+		PORTC = 0x04;
+		_delay_ms(500);
+	}
+}

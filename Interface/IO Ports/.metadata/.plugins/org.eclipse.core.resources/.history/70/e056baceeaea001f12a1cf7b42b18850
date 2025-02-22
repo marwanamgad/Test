@@ -1,0 +1,15 @@
+/*
+ * ex5.c
+ *
+ *  Created on: Feb 14, 2025
+ *      Author: marwan
+ */
+
+
+#include<avr/io.h>
+
+int main(void)
+{
+	DDRD &= ~(1<<PD3);
+	DDRC |= (1<<PC5);
+}

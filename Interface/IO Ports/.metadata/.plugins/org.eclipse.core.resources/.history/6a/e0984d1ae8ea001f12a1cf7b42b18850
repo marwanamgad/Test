@@ -1,0 +1,13 @@
+/*
+ * ex2.c
+ *
+ *  Created on: Feb 14, 2025
+ *      Author: marwan
+ */
+
+#include<avr/io.h>
+
+int main(void)
+{
+	DDRC |= (1<<PC2);
+}

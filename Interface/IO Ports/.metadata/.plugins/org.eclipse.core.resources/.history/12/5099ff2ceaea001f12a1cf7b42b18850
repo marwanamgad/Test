@@ -1,0 +1,9 @@
+/*
+ * ex5.c
+ *
+ *  Created on: Feb 14, 2025
+ *      Author: marwan
+ */
+
+
+#inlcude<avr/io.h>

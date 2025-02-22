@@ -1,0 +1,39 @@
+/*
+ * ex6.c
+ *
+ *  Created on: Feb 15, 2025
+ *      Author: marwan
+ */
+
+
+#include<avr/io.h>
+#include<util/delay.h>
+
+int main (void)
+{
+	unsigned char count = 0;
+	unsigned char flag = 0;
+
+	DDRD &= ~(1<<PD4);//Configure PIN4 in PORTD as input pins
+	DDRC |= 0x0F;  //Configure All the Pins in PORTD as Output pins
+	PORTC = 0x00;   //Turn OFF all the leds at the beginning by clearing all bits in PORTD
+
+	while(1)
+	{
+		if(PIND & (1<<4))
+		{
+			_delay_ms(30);
+
+			if(PIND & (1<<4))
+			{
+				if(count < 9)
+				{
+					count++;
+					PORTC = count;
+					flag = 1;
+				}
+			}
+
+		}
+	}
+}

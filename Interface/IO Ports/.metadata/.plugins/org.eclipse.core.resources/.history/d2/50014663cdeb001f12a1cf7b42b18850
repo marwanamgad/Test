@@ -1,0 +1,12 @@
+/*
+ * challenge4.c
+ *
+ *  Created on: Feb 15, 2025
+ *      Author: marwan
+ */
+#include<avr/io.h>
+
+int main(void)
+{
+	DDRC &= ~(1<<PC0);
+}

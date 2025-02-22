@@ -1,0 +1,31 @@
+/*
+ * ex5.c
+ *
+ *  Created on: Feb 11, 2025
+ *      Author: marwan
+ */
+
+#include<avr/io.h>
+
+int main(void)
+{
+	DDRD &= ~(1<<PD3);//Configure PIN3 IN PORTD as input Pin
+	DDRC |= (1<<PC5); //Configure PIN5 IN PORTC as output Pin
+	PORTC &= ~(1<<PC5); //Set PIN5 in PORTC with value 0 (Buzzer OFF)
+
+	while(1)
+	{
+		if(!(PIN3 & (1<<PD3))) //Check if push Button is pressed or not
+		{
+			PORTC |= (1<<PC5);//Set PIN5 in PORTC with value 1 (Buzzer ON)
+		}
+		else
+		{
+			PORTC &= ~(1<<PC5); //Set PIN5 in PORTC with value 0 (Buzzer OFF)
+		}
+	}
+
+}
+
+
+
